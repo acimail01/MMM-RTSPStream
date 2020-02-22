@@ -289,9 +289,10 @@ end
         var argsM = [];
 
         payload.forEach(s => {
-            var args = ["--live", "--video_queue", "4", "--fps", "30", "--no-osd",
-                this.config[s.name].url
-            ];
+            var args = ["--live", "--video_queue", "4", "--fps", "30", "--no-osd"];
+			args.push(...this.config.playerArgsOmx.split(" "));
+			args.push(this.config[s.name].url);
+            
             if (!("fullscreen" in s)) {
                 args.unshift("--win", `${s.box.left},${s.box.top},${s.box.right},${s.box.bottom}`);
             } else {
