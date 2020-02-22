@@ -25,6 +25,7 @@ Module.register("MMM-RTSPStream", {
         moduleOffset: 0, // Offset to align OMX player windows
         shutdownDelay: 11, // Seconds
         animationSpeed: 1500,
+        playerArgsOmx: "",
         stream1: {
             name: 'BigBuckBunny Test',
             url: 'rtsp://184.72.239.149/vod/mp4:BigBuckBunny_115k.mov',
